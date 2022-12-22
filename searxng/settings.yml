@@ -2,7 +2,7 @@ general:
   # Debug mode, only for development
   debug: false
   # displayed name
-  instance_name: "BlendedSearch"
+  instance_name: ${INSTANCE_NAME}
   # For example: https://example.com/privacy
   privacypolicy_url: false
   # use true to use your own donation page written in searx/info/en/donate.md
@@ -26,7 +26,7 @@ search:
   # Existing autocomplete backends: "dbpedia", "duckduckgo", "google", "yandex",
   # "seznam", "startpage", "swisscows", "qwant", "wikipedia" - leave blank to turn it off
   # by default.
-  autocomplete: ""
+  autocomplete: "duckduckgo"
   # minimun characters to type before autocompleter starts
   autocomplete_min: 4
   # Default search language - leave blank to detect from browser information or
@@ -61,14 +61,14 @@ server:
   # If your instance owns a /etc/searxng/settings.yml file, then set the following
   # values there.
 
-  secret_key: "99db6ecaf885bc12daa734afe30192894cdc1341582b1aa3a20dbf3691a22880"  # change this!
+  secret_key: ${SECRET_KEY}  # change this!
   # Proxying image results through searx
   image_proxy: false
   # 1.0 and 1.1 are supported
   http_protocol_version: "1.0"
   # POST queries are more secure as they don't show up in history but may cause
   # problems when using Firefox containers
-  method: "POST"
+  method: "GET"
   default_http_headers:
     X-Content-Type-Options: nosniff
     X-XSS-Protection: 1; mode=block
