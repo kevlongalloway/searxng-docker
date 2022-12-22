@@ -12,6 +12,7 @@ general:
   contact_url: false
   # record stats
   enable_metrics: true
+  autocomplete: "duckduckgo"
 
 brand:
   new_issue_url: https://github.com/searxng/searxng/issues/new
